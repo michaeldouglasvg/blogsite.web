@@ -1,24 +1,62 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react"
+import { ThemeProvider } from "styled-components"
+import Globalstyles from "./styles/Globals/Globals.styled"
+import Header from "./pages/Header"
+import Home from "./pages/Home";
 
 function App() {
+  const [mode, setMode] = useState(() => localStorage.getItem('mode') || 'light');
+
+  // Function to handle colors
+  const toggleMode = () => {
+    const newMode = mode === 'dark' ? 'light' : 'dark';
+    setMode(newMode);
+    localStorage.setItem('mode', newMode);
+  }
+  // Adding css for every mode
+  useEffect(() => {
+    localStorage.setItem('mode', mode);
+  }, [mode]);
+
+  // Updating css colors
+  useEffect(() => {
+    document.body.classList.add(mode);
+    return () => {
+      document.body.classList.remove(mode);
+    };
+  }, [mode]);
+
+  // Themes, mobile responsives & flex consitions
+  const theme = {
+    colors: {
+      header: "skyblue",
+      body: mode === "dark" ? 'rgb(23, 23, 23)' : 'whitesmoke',
+      footer: "grey ",
+      color: mode === "dark" ? 'white' : '#1a1a28',
+      border: mode === "dark" ? "1px solid #333333" : "1px solid #c6c6c6",
+      boxshadow: mode === "dark" ? "0 0 5px 1px rgba(255, 255, 255, .1)" : "0 0 5px 1px rgba(0, 0, 0, .1)",
+      transparent: mode === "dark" ? "rgba(255, 255, 255, .8)" : "rgba(0, 0, 0, .8)"
+    },
+
+    responsive: {
+      mobilesm: "426px",
+      mobilemd: "769px",
+      mobilelg: "1025px"
+    },
+
+    flex: {
+      chosedirection: "column",
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <>
+        <Globalstyles />
+        <Header toggleMode={toggleMode} mode={mode}/>
+        <Home />
+      </>
+    </ThemeProvider>
   );
 }
 
