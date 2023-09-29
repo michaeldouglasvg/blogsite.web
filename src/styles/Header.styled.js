@@ -41,14 +41,14 @@ export const Logo = styled.div`
 `
 // Header >> Events style
 export const Events = styled.div`
- width: 150px;
  height: 50px;
  display: grid;
  place-items: center;
  margin-left: .4rem;
- padding: 1rem .1rem;
+ padding: 1rem .4rem;
  box-shadow: ${({theme}) => theme.colors.boxshadow};
  border-radius: 5px;
+ border-top: .6rem solid blue;
 
  @media (min-width: ${({theme}) => theme.responsive.mobilemd}){
   margin-left: 1rem;

@@ -7,12 +7,7 @@ import { BiMoon, BiSun } from "react-icons/bi";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-const Header = ({ toggleMode, mode }) => {
-  // events 
-  const managrEvents = () => {
-    alert("This page is not available at the moment...Please try again later.");
-  }
-
+const Header = ({ toggleMode, mode, managrEvents }) => {
   // AOS animation
   useEffect(() => {
     AOS.init();
@@ -23,7 +18,7 @@ const Header = ({ toggleMode, mode }) => {
    <HeaderStyledComponent>
     <Logo><img src={process.env.PUBLIC_URL+'/images/sitelogo2.jpg'} alt="description"/></Logo>
     <Events>
-     <p onClick={managrEvents}>Events Loading...</p>
+     <p onClick={managrEvents}>QR~CODE</p>
     </Events>
     {/* Smaill screen navigation */}
     <HeaderNavLinks>

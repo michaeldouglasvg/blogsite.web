@@ -3,9 +3,18 @@ import { ThemeProvider } from "styled-components"
 import Globalstyles from "./styles/Globals/Globals.styled"
 import Header from "./pages/Header"
 import Home from "./pages/Home";
+import QRCodeGenerator from "./pages/Qrcode";
+import { QRcodeScannerStyles } from "./styles/QRcode.styled";
+import { Button } from "./components/Button.styled";
 
 function App() {
   const [mode, setMode] = useState(() => localStorage.getItem('mode') || 'light');
+  const[qrcode, setQrcode] = React.useState(false)
+
+   // events 
+   const managrEvents = () => {
+    setQrcode(true)
+  }
 
   // Function to handle colors
   const toggleMode = () => {
@@ -53,8 +62,16 @@ function App() {
     <ThemeProvider theme={theme}>
       <>
         <Globalstyles />
-        <Header toggleMode={toggleMode} mode={mode}/>
+        <Header toggleMode={toggleMode} mode={mode} managrEvents={managrEvents}/>
         <Home />
+        {qrcode && <QRcodeScannerStyles>
+        <div className='Code'>
+          <QRCodeGenerator />
+          <div className="QRcodebtn">
+            <Button bg='orangered' clr='white' onClick={() => {setQrcode(false)}}>Close QR Code</Button>
+          </div>
+        </div>
+      </QRcodeScannerStyles>}
       </>
     </ThemeProvider>
   );
