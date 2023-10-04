@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const HomeMainDisplay = styled.article`
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
     margin: .1rem auto;
     margin-top: 60px;
     grid-gap: 1rem;
@@ -102,7 +102,7 @@ export const ContentLeft = styled.div`
     }
 
     & .ButtonsLinks{
-        width: 90%;
+        width: 85%;
         margin: .8rem auto;
         text-align: center;
         display: flex;
@@ -116,9 +116,10 @@ export const ContentLeft = styled.div`
 `
 
 export const ContentRight = styled.div`
-    width: 100%;
+    width: 98%;
+    margin: 0 auto;
     & > .Image{
-        width: 99%;
+        width: 92%;
         overflow: hidden;
         margin: .1rem auto;
         border-radius: 3px;

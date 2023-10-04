@@ -3,7 +3,7 @@ import styled from 'styled-components';
 // Main header styles
 export const HeaderStyledComponent = styled.header`
  width: 100%;
- padding: .2rem .5rem;
+ padding: .2rem 1rem;
  display: flex;
  align-items: center;
  justify-content: space-between;
