@@ -39,22 +39,22 @@ const Contacts = () => {
       </LeftContainerContent>
       <RightContainerContent>
         <div className='Formcontainer'>
-            <form>
+            <form name="contact" method="POST" data-netlify="true">
                 <div className='Formgroup'>
                     <span>Full name</span>
-                    <input type="text" placeholder='Enter the full name'/>
+                    <input type="text" name="name" id='name' placeholder='Enter the full name'/>
                 </div>
                 <div className='Formgroup'>
                     <span>Working Email</span>
-                    <input type="text" placeholder='Enter valid email address'/>
+                    <input type="text" name='emaill' id='email' placeholder='Enter valid email address'/>
                 </div>
                 <div className='Formgroup'>
                     <span>Subject/Title</span>
-                    <input type="text" placeholder='Type your topic of interest'/>
+                    <input type="text" name='subject' id='subject' placeholder='Type your topic of interest'/>
                 </div>
                 <div className='Formgroup'>
                     <span>Message</span>
-                    <textarea col="5" row="10" placeholder='Enter the full name'/>
+                    <textarea name='message' id='message' col="5" row="10" placeholder='Enter the full name'/>
                 </div>
                 <div className='checks'>
                     <input type="checkbox" id="policy"/>
