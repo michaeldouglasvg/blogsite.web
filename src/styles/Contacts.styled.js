@@ -89,7 +89,6 @@ export const LeftContainerContent = styled.div`
                     height: 30px;
                     display: grid;
                     place-items: center;
-                    border: ${({theme}) => theme.colors.border};
                     margin-right: 1rem;
                     border-radius: 15px;
                 }
