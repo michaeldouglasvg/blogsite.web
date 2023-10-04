@@ -118,6 +118,7 @@ export const RightContainerContent = styled.div`
                     outline: none;
                     color: white;
                     border-radius: 5px;
+                    width: auto;
                 }
                 & > textarea{
                     padding: .8rem;
@@ -139,6 +140,13 @@ export const RightContainerContent = styled.div`
                     margin-left: 1rem;
                     font-style: italic;
                 }
+            }
+
+            & > .submit{
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                flex-direction: column;
             }
         }
     }

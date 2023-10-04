@@ -62,8 +62,8 @@ const Contacts = () => {
                     <input type="checkbox" id="policy" checked={enablesend} onChange={() => setEnablesend(!enablesend)}/>
                     <label for="policy"><p>By clicking submit, the website owner will get the email notification of your message. The system will block next access if false information is provided at first.</p></label>
                 </div>
-                <div className='Formgroup'>
-                <input type="submit" value={enablesend?"Send message":"Agree with Terms and Policy to send message"} style={{background: !enablesend && "orangered"}} disabled={!enablesend}/>
+                <div className='Formgroup submit'>
+                <input type="submit" value={enablesend?"Send message":"Agree with Terms and Policy to send message"} style={{background: !enablesend && "orangered", padding: enablesend && ".8rem 1.5rem"}} disabled={!enablesend}/>
                 </div>
             </form>
         </div>
