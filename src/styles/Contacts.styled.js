@@ -113,7 +113,6 @@ export const RightContainerContent = styled.div`
                 }
                 & > input[type="submit"]{
                     padding: .8rem;
-                    width: 100%;
                     background: green;
                     border: none;
                     outline: none;
