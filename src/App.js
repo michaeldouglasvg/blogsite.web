@@ -7,6 +7,7 @@ import QRCodeGenerator from "./pages/Qrcode";
 import { QRcodeScannerStyles } from "./styles/QRcode.styled";
 import { Button } from "./components/Button.styled";
 import { NavigationContextApiProvider } from "./context/Navigations";
+import Contacts from "./pages/Contacts";
 
 function App() {
   const [mode, setMode] = useState(() => localStorage.getItem('mode') || 'light');
@@ -74,6 +75,7 @@ function App() {
             </div>
           </div>
         </QRcodeScannerStyles>}
+        <Contacts />
         </>
       </NavigationContextApiProvider>
     </ThemeProvider>
