@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import QRCodeGenerator from "./pages/Qrcode";
 import { QRcodeScannerStyles } from "./styles/QRcode.styled";
 import { Button } from "./components/Button.styled";
+import { NavigationContextApiProvider } from "./context/Navigations";
 
 function App() {
   const [mode, setMode] = useState(() => localStorage.getItem('mode') || 'light');
@@ -60,19 +61,21 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <>
-        <Globalstyles />
-        <Header toggleMode={toggleMode} mode={mode} managrEvents={managrEvents}/>
-        <Home />
-        {qrcode && <QRcodeScannerStyles>
-        <div className='Code'>
-          <QRCodeGenerator />
-          <div className="QRcodebtn">
-            <Button bg='orangered' clr='white' onClick={() => {setQrcode(false)}}>Close QR Code</Button>
+      <NavigationContextApiProvider>
+        <>
+          <Globalstyles />
+          <Header toggleMode={toggleMode} mode={mode} managrEvents={managrEvents}/>
+          <Home />
+          {qrcode && <QRcodeScannerStyles>
+          <div className='Code'>
+            <QRCodeGenerator />
+            <div className="QRcodebtn">
+              <Button bg='orangered' clr='white' onClick={() => {setQrcode(false)}}>Close QR Code</Button>
+            </div>
           </div>
-        </div>
-      </QRcodeScannerStyles>}
-      </>
+        </QRcodeScannerStyles>}
+        </>
+      </NavigationContextApiProvider>
     </ThemeProvider>
   );
 }

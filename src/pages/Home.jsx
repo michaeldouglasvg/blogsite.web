@@ -1,8 +1,11 @@
 import React from 'react'
 import { ContentLeft, ContentRight, HomeMainDisplay } from '../styles/Home.styled'
 import { Button } from '../components/Button.styled'
+import { useNavigationHook } from '../context/hooks/navigation.hook'
 
 const Home = () => {
+  const { download } = useNavigationHook();
+
   return (
     <HomeMainDisplay>
       <ContentLeft>
@@ -19,9 +22,9 @@ const Home = () => {
             <p>I'm a detail-oriented data entry specialist with strong business leadership skills. Proficient in Microsoft Office, I analyze data, aid strategic decisions, and ensure efficient data management. I'm a valuable asset for enhancing team productivity and delivering insightful results.</p>
         </div>
         <div className='ButtonsLinks'>
-          <Button bg='skyblue' clr='white'>Resume/CV</Button>
-          <Button bg='green' clr='white'>Work with me</Button>
-          <Button bg='orangered' clr='white'>Certificates</Button>
+          <Button bg='skyblue' clr='white' onClick={download}>Resume/CV</Button>
+          <Button bg='green' clr='white' onClick={download}>Work with me</Button>
+          <Button bg='orangered' clr='white' onClick={download}>Certificates</Button>
         </div>
       </ContentLeft>
       

@@ -7,7 +7,11 @@ import { BiMoon, BiSun } from "react-icons/bi";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+import { useNavigationHook } from '../context/hooks/navigation.hook';
+
 const Header = ({ toggleMode, mode, managrEvents }) => {
+  const { handleAlertofComplition } = useNavigationHook();
+
   // AOS animation
   useEffect(() => {
     AOS.init();
@@ -25,7 +29,7 @@ const Header = ({ toggleMode, mode, managrEvents }) => {
     </HeaderNavLinks>
     {/* Large screen navigation */}
     <WindowViewNav>
-      <ul>
+      <ul onClick={handleAlertofComplition}>
         <li>Services</li>
         <li>Contacts</li>
         <li>Blogs</li>
