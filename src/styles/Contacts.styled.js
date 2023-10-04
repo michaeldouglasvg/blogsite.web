@@ -66,6 +66,35 @@ export const LeftContainerContent = styled.div`
                 }
             }
         }
+
+        & .Sociallinks{
+            flex-direction: column;
+            border: none;
+            border-top: 1rem solid skyblue;
+            margin-top: 2rem;
+            & p{
+                width: 100%;
+                font-size: 1.5rem;
+                padding: .5rem .1rem;
+                border-bottom: ${({theme}) => theme.colors.border};
+            }
+            & .mediatypes{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                margin-top: 1rem;
+                & div{
+                    width: 30px;
+                    height: 30px;
+                    display: grid;
+                    place-items: center;
+                    border: ${({theme}) => theme.colors.border};
+                    margin-right: 1rem;
+                    border-radius: 15px;
+                }
+            }
+        }
     }
 `
 

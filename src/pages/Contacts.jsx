@@ -1,6 +1,7 @@
 import React from 'react'
 import { ContactMainDisplay, LeftContainerContent, RightContainerContent } from '../styles/Contacts.styled'
-import { FaEnvelope, FaGlobe, FaMapMarker, FaPhone } from "react-icons/fa"
+import { FaEnvelope, FaFacebook, FaGlobe, FaInstagram, FaLinkedin, FaMapMarker, FaPhone, FaTiktok, FaWhatsapp } from "react-icons/fa"
+import { RiTwitterXFill } from "react-icons/ri";
 
 const Contacts = () => {
     const[enablesend, setEnablesend] = React.useState(false);
@@ -36,6 +37,17 @@ const Contacts = () => {
                 <p>Email through</p>
                 <p>gracieskr21@gmail.com</p>
             </div>
+         </section>
+         <section className='Sociallinks'>
+           <p>Sociomedia</p>
+           <div className='mediatypes'>
+                <div><FaFacebook size={20} color='blue'/></div>
+                <div><FaInstagram size={20} color='orangered'/></div>
+                <div><FaWhatsapp size={20} color='green'/></div>
+                <div><RiTwitterXFill size={20} color='black'/></div>
+                <div><FaLinkedin size={20} color='skyblue'/></div>
+                <div><FaTiktok size={20} color='brown'/></div>
+           </div>
          </section>
         </div>
       </LeftContainerContent>
